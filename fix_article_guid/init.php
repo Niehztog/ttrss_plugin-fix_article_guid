@@ -33,7 +33,7 @@ class fix_article_guid extends Plugin {
      *
      * @param $feed FeedParser
      */
-    function hook_feed_parsed($feed) {
+    function hook_feed_parsed($parser, $feed) {
 
         $fix_guids = $this->read_setting(self::SETTING_NAME_FIX_GUID);
         $fix_guids_value = array_search($this->feed_id, $fix_guids);
