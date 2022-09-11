@@ -94,7 +94,7 @@ class fix_article_guid extends Plugin {
         $fix_guids = $this->host->get($this, self::SETTING_NAME_FIX_GUID);
         if (!is_array($fix_guids)) $fix_guids = array();
 
-        $enable = checkbox_to_sql_bool($_POST["fix_guids_enabled"]);
+        $enable = checkbox_to_sql_bool($_POST["fix_guids_enabled"]??'');
         $key = array_search($feed_id, $fix_guids);
 
         if ($enable) {
